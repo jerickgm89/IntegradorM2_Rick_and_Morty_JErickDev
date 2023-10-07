@@ -10,6 +10,7 @@ import PATHROUTES from "./helpers/PathRoutes.helper";
 // import Favorites from "./components/Favorites/Favorites";
 import { connect } from "react-redux";
 import Favorites from "./components/Favorites/Favorites";
+import fondo from "../src/img/fondo.jpg"
 
 function App() {
   // const { myFavorites } = props;

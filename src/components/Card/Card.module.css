@@ -1,25 +1,41 @@
 .cardContainer {
-  background-color: rgb(43, 43, 43);
+  background-color: #480251;
   width: 320px;
   height: 400px;
-  color: white;
+  color: #fff;
   border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(129, 12, 137, 0.2);
+  position: relative;
+  margin-top: 20px;
 }
 
 .header {
   position: relative;
+  overflow: hidden;
 }
 
 .wrapperButton {
   position: absolute;
-  right: 5px;
-  top: 5px;
+  right: 10px;
+  top: 10px;
+  border: none;
+  color: #7417ad;
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
 }
 
+
 .wrapperText {
-  position: relative;
-  display: flex;
-  justify-content: space-evenly;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  justify-content: center;
+
 }
 
 .name {
@@ -30,12 +46,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  left: -10px;
+  left: 20px;
   top: -50px;
+  border-radius: 10px 10px;
 }
 
-img {
+img {  
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+
 }
 
 .statusalive {
@@ -51,4 +71,11 @@ img {
   color: white;
   border-radius: 4px;
   border: none;
+  padding: 5px 10px;
+  cursor: pointer;
 }
+
+.btn:hover {
+  background-color: darkred;
+}
+

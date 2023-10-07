@@ -2,12 +2,13 @@ import SearchBar from "../SearchBar/SearchBar";
 import { Link } from "react-router-dom";
 import styles from "./Nav.module.css";
 import PATHROUTES from "../../helpers/PathRoutes.helper";
+import image from "../../img/jerickdev.png"
 
 const Nav = (props) => {
   const { onSearch } = props;
   return (
     <div className={styles.nav}>
-      <h2>Super App R&M</h2>
+      <img src={image} alt="logo" className={styles.navImg} />
       <div className={styles.wrapperButton}>
         <Link to={PATHROUTES.HOME} className={styles.linkRouter}>
           Home
