@@ -1,0 +1,16 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wrapperButton {
+  display: flex;
+  gap: 20px;
+  font-weight: bold;
+}
+
+.linkRouter {
+  text-decoration: none;
+  color: inherit;
+}

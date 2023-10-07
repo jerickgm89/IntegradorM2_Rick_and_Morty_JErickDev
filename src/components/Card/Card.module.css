@@ -1,0 +1,54 @@
+.cardContainer {
+  background-color: rgb(43, 43, 43);
+  width: 320px;
+  height: 400px;
+  color: white;
+  border-radius: 14px;
+}
+
+.header {
+  position: relative;
+}
+
+.wrapperButton {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+.wrapperText {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.name {
+  position: absolute;
+  width: 280px;
+  background-color: rgb(60, 0, 97);
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: -10px;
+  top: -50px;
+}
+
+img {
+  width: 100%;
+}
+
+.statusalive {
+  color: green;
+}
+
+.statusdead {
+  color: aqua;
+}
+
+.btn {
+  background-color: red;
+  color: white;
+  border-radius: 4px;
+  border: none;
+}
