@@ -1,13 +1,15 @@
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import styles from "./Detail.css";
+import PATHROUTES from "../../helpers/PathRoutes.helper";
 
 const Detail = () => {
   const { id } = useParams();
   const [character, setCharacter] = useState({});
 
   useEffect(() => {
-    axios(`http://localhost:3001/rickandmorty/character/${id}`).then(
+    axios.get(`http://localhost:3001/rickandmorty/character/${id}`).then(
       ({ data }) => {
         if (data.name) {
           setCharacter(data);
@@ -19,20 +21,33 @@ const Detail = () => {
     return setCharacter({});
   }, [id]);
 
+  const onClose = (id) => {
+    setCharacter(
+      character.filter((char) => {
+        return char.id !== Number(id);
+      })
+    );
+  };
+
   return (
-    <div>
-      {character ? (
-        <div>
-          <h1>{character.name}</h1>
-          <img
-            src={character.image}
-            style={{ width: "300px", height: "420px" }}
-          />
-          <h1>{character.status}</h1>{" "}
+    <div className={styles.containerDt}>
+      <Link to={PATHROUTES.HOME}>
+        <div className={styles.divButtonDt}>
+          <button className={styles.buttonDt} onClick={() => onClose(id)}>
+            X
+          </button>
         </div>
-      ) : (
-        <h1>Loading...</h1>
-      )}
+      </Link>
+      {character.name ? (
+        <>
+          <h3>NOMBRE: {character.name} 🦸‍♂️</h3>
+          <h3>ESTADO: {character.status} ☠</h3>
+          <h3>ESPECIE: {character.species} 👽</h3>
+          <h3>GÉNERO: {character.gender} 👫</h3>
+          <h3>ORIGEN: {character.origin?.name} 🌎</h3>
+          <img className={styles.imgDt} src={character.image} alt="" />
+        </>
+      ) : null}
     </div>
   );
 };
