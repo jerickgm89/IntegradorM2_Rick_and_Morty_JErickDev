@@ -4,9 +4,6 @@ const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
 const FavoriteModel = require('./models/Favorite.js');
 const UserModel = require('./models/User.js');
 
-console.log(`DB_USER: ${DB_USER}`);
-console.log(`DB_PASSWORD: ${DB_PASSWORD}`);
-console.log(`DB_HOST: ${DB_HOST}`);
 
 // EJERCICIO 03
 // A la instancia de Sequelize le falta la URL de conexión. ¡Agrégala!

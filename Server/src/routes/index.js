@@ -1,17 +1,15 @@
 const { Router } = require('express');
 const { getCharById } = require('../controllers/getCharById');
+const { postUser} = require('../controllers/postUser');
 const { login } = require('../controllers/login');
-const { postFav, deleteFav } = require('../controllers/handleFavorites');
+const { postFav } = require('../controllers/postFav');
+const { deleteFav } = require('../controllers/deleteFav');
 
 const router = Router();
 
 router.get('/character/:id', getCharById);
-router.get('/login', (req, res) =>{
-    const { email, password } = req.query;
-    let user = users.find((user) => user.email === email && user.password === password);
-
-    user ? res.json({ access: true }) : res.json({ access: false });
-});
+router.get('/login', login);
+router.post('/login', postUser);
 router.post('/fav', postFav);
 router.delete('/fav/:id', deleteFav);
 

@@ -18,9 +18,5 @@ server.use((req, res, next) => {
 server.use(express.json());
 server.use("/rickandmorty", router);
 
-const PORT = process.env.PORT || 3001;
-server.listen(PORT, () => {
-  console.log("Server raised in port: " + PORT);
-});
 
 module.exports = server;

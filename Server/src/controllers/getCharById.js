@@ -20,7 +20,7 @@ const URL = 'https://rickandmortyapi.com/api/character/';
 // };
 
 //Con async await
-const getCharById = async (req, res) => {
+exports.getCharById = async (req, res) => {
   const { id } = req.params;
 
   try {
@@ -36,8 +36,3 @@ const getCharById = async (req, res) => {
       res.status(500).json({ message: error.message });
     }
 };
-
-
-  module.exports = {
-    getCharById,
-  };
